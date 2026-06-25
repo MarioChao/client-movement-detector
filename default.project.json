@@ -1,0 +1,18 @@
+{
+  "name": "client-movement-detector",
+  "tree": {
+    "$className": "DataModel",
+
+    "ReplicatedStorage": {
+      "Modules": {
+        "$className": "Folder",
+        "ClientMovementDetector": {
+          "$path": "src/ClientMovementDetector"
+        }
+      },
+      "PlayerScripts": {
+        "$path": "src/TestPlace/PlayerScripts"
+      }
+    }
+  }
+}

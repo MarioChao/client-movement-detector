@@ -1,0 +1,11 @@
+# Project place file
+/client-movement-detector.rbxlx
+
+# Roblox Studio lock files
+/*.rbxlx.lock
+/*.rbxl.lock
+
+sourcemap.json
+
+# MacOS
+.DS_Store

@@ -1,0 +1,14 @@
+[package]
+name = "mariochao/client-movement-detector"
+description = "Simple module for detecting jump requests and moving direction of the local player, with support for disabling jumping and moving."
+
+version = "1.0.0"
+license = "MIT"
+authors = ["Mario Chao"]
+realm = "shared"
+registry = "https://github.com/UpliftGames/wally-index"
+repository = "https://github.com/MarioChao/client-movement-detector"
+
+exclude = ["TestPlace"]
+
+[dependencies]
