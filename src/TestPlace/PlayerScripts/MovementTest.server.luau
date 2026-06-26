@@ -38,13 +38,20 @@ end
 logDetection = function(prefix: string)
     local isJumping = ClientMovementDetector.getIsJumping()
     local moveDirection = ClientMovementDetector.getMoveDirection()
-    print(prefix, "Is jumping:", isJumping, " Moving dir:", tostring(moveDirection))
+    local inputMoveDirection = ClientMovementDetector.getMoveDirection_input()
+    print(prefix, "Is jumping:", isJumping)
+    print(prefix, "Moving dir:", tostring(moveDirection))
+    print(prefix, "Input moving dir:", tostring(inputMoveDirection))
 end
 
 
 ----- Main -----
 
 local function main()
+    -- Pause
+    print("[Movement Test]: Pause.")
+    task.wait(1)
+
     -- Player jump connections
     ClientMovementDetector.jumpStateChanged:Connect(function(isJumping: boolean)
         if isJumping then

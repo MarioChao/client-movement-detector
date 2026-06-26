@@ -22,8 +22,20 @@ local Players = game:GetService("Players")
 local Constants = {}
 
 Constants.localPlayer = Players.LocalPlayer
+Constants.playerScripts = Constants.localPlayer:WaitForChild("PlayerScripts")
 
 Constants.jumpStateChangedBindableEvent = Instance.new("BindableEvent")
+
+do
+    local _PlayerModule = Constants.playerScripts:WaitForChild("PlayerModule", 10)
+    pcall(function()
+        Constants.playerModule = require(_PlayerModule) :: any
+        Constants.playerModuleControls = Constants.playerModule:GetControls() :: any
+    end)
+    if not Constants.playerModuleControls then
+        warn(`[Client Movement Detector]: No player module found.`)
+    end
+end
 
 table.freeze(Constants)
 
@@ -48,6 +60,7 @@ local jumpDetectIteration
 
 local setMoveDirection
 local getMoveDirection
+local getMoveDirection_input
 local moveDetectIteration
 
 local connect
@@ -96,6 +109,21 @@ Gets the direction the local player is moving to.
 ]]
 getMoveDirection = function()
     return Globals.moveDirection
+end
+
+--[[
+Gets the input movement direction of the local player.
+@return (Vector3) The input movement direction in the format (right, 0, down); can be vector of any length.
+]]
+getMoveDirection_input = function()
+    local success, result = pcall(function()
+        return Constants.playerModuleControls:GetMoveVector()
+    end)
+    if not success then
+        warn(`[Client Movement Detector]: getMoveDirection_input() is unable to run due to a different PlayerModule.`)
+        return Vector3.zero
+    end
+    return result
 end
 
 moveDetectIteration = function(humanoid: Humanoid)
@@ -165,6 +193,7 @@ local Module = {}
 
 Module.getIsJumping = getIsJumping
 Module.getMoveDirection = getMoveDirection
+Module.getMoveDirection_input = getMoveDirection_input
 
 Module.connect = connect
 Module.disconnect = disconnect

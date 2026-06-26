@@ -1,5 +1,11 @@
 # Changelogs
 
+## [v1.1.0] Input movement direction | 2026/06/26
+
+Added new function for getting the input movement direction from the `PlayerModule`.
+- Uses `:GetControls()` and `:GetMoveVector()`.
+- Returns `Vector3.zero` if fails.
+
 ## [v1.0.0] Client movement detector | 2026/06/25
 
 Created the `ClientMovementDetector` module that implements jumping and moving detection using `Humanoid`.
