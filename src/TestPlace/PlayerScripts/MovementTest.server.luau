@@ -61,7 +61,14 @@ local function main()
         end
     end)
 
-    -- Connect detector & read values
+    -- Read values
+    ClientMovementDetector.disconnect()
+    for i = 1, 10 do
+        logDetection(`#{i}`)
+        task.wait(0.2)
+    end
+
+    -- Reconnect detector & read values
     ClientMovementDetector.connect(false, true)
     for i = 1, 10 do
         logDetection(`#{i}`)

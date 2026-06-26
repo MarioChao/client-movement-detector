@@ -221,6 +221,11 @@ function Module.setMovingEnabled(isMovingEnabled: boolean)
 end
 
 
+----- Run module -----
+
+Module.connect(true, true)
+
+
 ---------- Return module ----------
 
 table.freeze(Module)

@@ -1,6 +1,11 @@
 # Changelogs
 
-## [v1.1.0] Input movement direction | 2026/06/26
+## [v1.1.1] Default detector connection | 2026/06/26 (2)
+
+The module is now connected by default on import.
+- Both `isJumpingEnabled` and `isMovingEnabled` are set to `true`, which means gameplay won't be affected.
+
+## [v1.1.0] Input movement direction | 2026/06/26 (1)
 
 Added new function for getting the input movement direction from the `PlayerModule`.
 - Uses `:GetControls()` and `:GetMoveVector()`.

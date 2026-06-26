@@ -2,7 +2,7 @@
 name = "mariochao/client-movement-detector"
 description = "Simple module for detecting jump requests and moving direction of the local player, with support for disabling jumping and moving."
 
-version = "1.1.0"
+version = "1.1.1"
 license = "MIT"
 authors = ["Mario Chao"]
 realm = "shared"

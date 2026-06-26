@@ -29,6 +29,7 @@ ClientMovementDetector.connect(false, true)
     - In the example above, `isJumpingEnabled` is `false` and `isMovingEnabled` is `true`, which means that the player can move but cannot jump.
     - You can also modify these values later on by calling `.setJumpingEnabled(...)` and `.setMovingEnabled(...)`.
 - Calling this also fires a `jumpStateChanged` event.
+- By default, requiring the module for the first time calls `.connect(true, true)`.
 
 Reading local player's jumping state and moving direction:
 
