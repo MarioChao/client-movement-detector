@@ -19,7 +19,7 @@ This module also allows developers to disable jumping and moving.
 
 ## Usage
 
-Starting detection:
+### Starting detection
 
 ```luau
 ClientMovementDetector.connect(false, true)
@@ -31,7 +31,7 @@ ClientMovementDetector.connect(false, true)
 - Calling this also fires a `jumpStateChanged` event.
 - By default, requiring the module for the first time calls `.connect(true, true)`.
 
-Reading local player's jumping state and moving direction:
+### Reading local player's jumping state and moving direction
 
 ```luau
 local isJumping = ClientMovementDetector.getIsJumping()
@@ -42,7 +42,7 @@ local inputMoveDirection = ClientMovementDetector.getMoveDirection_input()
 - Move direction is in world space.
 - Input move direction is in the format (right, 0, down).
 
-Listening for jump button pressed and released:
+### Listening for jump button pressed and released
 
 ```luau
 ClientMovementDetector.jumpStateChanged:Connect(function(isJumping: boolean)
@@ -50,7 +50,7 @@ ClientMovementDetector.jumpStateChanged:Connect(function(isJumping: boolean)
 end)
 ```
 
-Stopping detection:
+### Stopping detection
 
 ```luau
 ClientMovementDetector.disconnect()
